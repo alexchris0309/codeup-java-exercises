@@ -36,6 +36,15 @@ public class HelloWorld {
              x /= y;
             y -= x;
 
+            int max = Integer.MAX_VALUE;
+            System.out.println(max);
+            max++;
+            System.out.println(max);
+//            it rolls over to -  (roll over to min value)
+
+            byte lil=(byte)max;
+            System.out.println(lil);
+
         }
 }
 
