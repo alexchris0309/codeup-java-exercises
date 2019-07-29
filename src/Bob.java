@@ -17,7 +17,7 @@ public class Bob {
          } else if (userQuestion.equals("")) {
              System.out.println("Fine.Be that way!");
          }
-         else  if (userQuestion.equals("bye")){
+         else  if (userQuestion.contains("bye")){
              System.out.println("Goodbye");
              break;
          }
