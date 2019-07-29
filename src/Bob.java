@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Bob {
     public static void main(String[] args) {
-
+boolean talking=true;
 
      do {
          Scanner scanner = new Scanner(System.in);
@@ -13,19 +13,19 @@ public class Bob {
          if (userQuestion.endsWith("?")) {
              System.out.println("Sure.");
          } else if (userQuestion.endsWith("!")) {
-             System.out.println("Woa,chill out!");
-         } else if (userQuestion.equals("")) {
+             System.out.println("Whoa,chill out!");
+         } else if (userQuestion.isEmpty()) {
              System.out.println("Fine.Be that way!");
          }
-         else  if (userQuestion.contains("bye")){
+         else  if (userQuestion.toLowerCase().contains("bye")){
              System.out.println("Goodbye");
-             break;
+             talking=false;
          }
          else{
              System.out.println("Whatever");
          }
 
-     }while(true);
+     }while(talking);
 
 
 
