@@ -6,9 +6,11 @@ public class Input {
 
 
     public  String getString(){
-        System.out.println("type something:");
+        System.out.println("type a string:");
         String userInput = scanner.nextLine();
         return userInput;
+
+//        return this.scanner.nextLine();
     }
 //
     public boolean yesNo() {
@@ -20,7 +22,7 @@ public class Input {
 
 
     public int getInt(int min, int max){
-        System.out.print("Enter a number between " + min + " and " + max + ": ");
+        System.out.println("Enter a number between " + min + " and " + max + ": ");
         int inputNumber = scanner.nextInt();
         if (inputNumber > max || inputNumber < min) {
             inputNumber = getInt(min, max);
@@ -34,11 +36,12 @@ public class Input {
         System.out.println("Please enter an integer");
         int inputNumber = scanner.nextInt();
         return inputNumber;
+//        return this.scanner.nextInt();
 
     }
 
     public double getDouble(double min, double max){
-        System.out.print("Enter a number between " + min + " and " + max + ": ");
+        System.out.println("Enter a number between " + min + " and " + max + ": ");
         double inputNumber = scanner.nextDouble();
         if (inputNumber > max || inputNumber < min) {
             inputNumber = getDouble(min, max);
