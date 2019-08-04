@@ -33,7 +33,7 @@ public class Input {
 
 
     public int getInt(){
-        System.out.println("Please enter an integer");
+//        System.out.println("Please enter an integer");
         int inputNumber = scanner.nextInt();
         return inputNumber;
 //        return this.scanner.nextInt();

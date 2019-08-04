@@ -1,83 +1,82 @@
 package movies;
 import util.Input;
-import static movies.MoviesArray.findAll;
-//why do we import this movies.MovieArray.findall(); this way?
 
 
 public class MoviesApplication {
 
-//    public static Movie[] displayMovies(Movie []movie) {
-//        for (int i = 0; i < movie.length; i += 1) {
-//            System.out.println(movie[i]);
-//
-//        }
-//        return movie;
-//
-//    }
-
 
     public static void main(String[] args) {
-        //        how do i import the findall() method in the MoviesArray?
-
-
 
         Input input = new Input();
+        int userInput;
 
-        String  whatMovie = "What would you like to do?\n";
-                whatMovie += "0 - exit\n";
-                whatMovie += "1 - view all movies\n";
-                whatMovie += "2 - view movies in the animated category\n";
-                whatMovie += "3 - view movies in the drama category\n" ;
-                whatMovie += "4 - view movies in the horror category\n";
-                whatMovie += "5 - view movies in the scifi category\n";
-                whatMovie += "\nEnter your choice:\n";
 
+        Movie[] movies = MoviesArray.findAll();
+
+
+        String whatMovie = "\nWhat would you like to do?\n";
+        whatMovie += "0 - exit\n";
+        whatMovie += "1 - view all movies\n";
+        whatMovie += "2 - view movies in the animated category\n";
+        whatMovie += "3 - view movies in the drama category\n";
+        whatMovie += "4 - view movies in the horror category\n";
+        whatMovie += "5 - view movies in the scifi category\n";
+        whatMovie += "\nEnter your choice:\n\n";
+do{
         System.out.println(whatMovie);
-        int userInput = input.getInt(0, 5);
+        userInput = input.getInt();
 
 
-        switch (userInput) {
-            case 1:
-                for (Movie movie : findAll()) {
-                    System.out.println(movie.getName() + "----" + movie.getCategory());
-                }
-                break;
-            case 2:
-                for (Movie movie : findAll()) {
-                    if(movie.getCategory().equals("animated")){
-                    System.out.println(movie.getName() + "----" + movie.getCategory());
-                }
-                }
-                break;
-            case 3:
-                for(Movie movie : findAll()) {
-                    if(movie.getCategory().equals("drama")){
-                    System.out.println(movie.getName() + "----" + movie.getCategory());
+
+
+            switch (userInput) {
+                case 0:
+
+                    System.out.println("you have chose to exit");
+                    break;
+
+
+                case 1:
+                    for (Movie movie : movies) {
+                        System.out.println(movie.getCategory() + "-------" + movie.getName());
                     }
-                }
 
-                break;
-            case 4:
-                for(Movie movie : findAll()) {
-                    if(movie.getCategory().equals("horror")){
-                    System.out.println(movie.getName() + "----" + movie.getCategory());
+
+                    break;
+
+                case 2:
+                    for (Movie movie : movies) {
+                        if (movie.getCategory().equalsIgnoreCase("animated")) {
+                            System.out.println(movie.getCategory() + "-------" + movie.getName());
+                        }
                     }
-                }
-                break;
-            case 5:
-                for(Movie movie : findAll()) {
-                    if(movie.getCategory().equals("scifi")){
-                    System.out.println(movie.getName() + "----" + movie.getCategory());
+
+                    break;
+                case 3:
+                    for (Movie movie : movies) {
+                        if (movie.getCategory().equalsIgnoreCase("drama")) {
+                            System.out.println(movie.getCategory() + "-------" + movie.getName());
+                        }
                     }
-                }
-                break;
-            default:
-                System.out.println("cool input");
+                case 4:
+                    for (Movie movie : movies) {
+                        if (movie.getCategory().equalsIgnoreCase("horror")) {
+                            System.out.println(movie.getCategory() + "-------" + movie.getName());
+                        }
+                    }
+                case 5:
+                    for (Movie movie : movies) {
+                        if (movie.getCategory().equalsIgnoreCase("scifi")) {
+                            System.out.println(movie.getCategory() + "-------" + movie.getName());
+                        }
+                    }
 
-                break;
-        }
+                default:
+                    break;
+            }
 
+        } while (userInput !=0);
     }
 
-    } //class end bracket//
+} //class end bracket//
 
