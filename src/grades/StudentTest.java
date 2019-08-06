@@ -17,6 +17,8 @@ public class StudentTest {
 
 
 
+
+
         System.out.println(newStudent.getGradeAverage());
         System.out.println(newStudent2.getGradeAverage());
 
