@@ -43,6 +43,10 @@ public class Student {
 
 
     }
+    // returns individual Grades
+    public ArrayList<Integer> getGrades() {
+        return this.grades;
+    }
 
 
 

@@ -79,7 +79,7 @@ public class GroceryList {
         boolean userInput=(input.yesNo());
         System.out.println("Please a Pick Category");
         System.out.println("| Dairy | Meat | Fruit | ");
-        String userInput = scanner.nextLine();
+//        String userInput = scanner.nextLine();
 
 
         ;

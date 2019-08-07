@@ -1,4 +1,5 @@
 package util;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Input {
@@ -33,11 +34,16 @@ public class Input {
 
 
     public int getInt(){
-//        System.out.println("Please enter an integer");
-        int inputNumber = scanner.nextInt();
+        System.out.println("Please enter an integer");
+        int inputNumber;
+        try {
+            inputNumber= Integer.valueOf(scanner.nextLine());
+        }
+        catch (NumberFormatException e) {
+            System.out.println("input is invalid");
+            return getInt();
+        }
         return inputNumber;
-//        return this.scanner.nextInt();
-
     }
 
     public double getDouble(double min, double max){
